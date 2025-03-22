@@ -25,29 +25,29 @@ metrics.
 
 1.  Created a VM with Standard B2s v2 SKU:
 
-    ![1](images\A1.png)
+   ![1](images/A1.png)
 
-    ![1](images\A2.png)
+   ![1](images/A2.png)
 
-    4\. Enabled Managed Identity for the VM:  
+2\. Enabled Managed Identity for the VM:  
 
-    ![1](images\A3.png)
+   ![1](images/A3.png)
 
 **Step 2: Installing Grafana**
 
 1.  **Connected to the VM via SSH:**  
     ssh azureuser@20.80.89.137  
 
-    ![1](images\A.png)
+    ![1](images/A.png)
 
     **2. Updated and installed necessary dependencies:**  
     sudo apt-get update && sudo apt-get upgrade -y  
     sudo apt-get install -y apt-transport-https
     software-properties-common wget  
 
-    ![1](images\B.png)
+    ![1](images/B.png)
 
-    ![1](images\C.png)
+    ![1](images/C.png)
 
     3\. Installed Grafana and started the service.
 
@@ -60,24 +60,24 @@ metrics.
 2.  **Allowed traffic on port 3000:**  
     sudo ufw allow 3000/tcp
 
-    ![1](images\B1.png)
+    ![1](images/B1.png)
 
-    ![1](images\E.png)
+    ![1](images/E.png)
 
 **Step 4: Configuring Managed Identity Authentication**
 
 1.  Assigned roles to the VM's Managed
     Identity.
-    ![1](images\F.png)
+    ![1](images/F.png)
 
-    ![1](images\G.png)
+    ![1](images/G.png)
 
     2\. Modified Grafana\'s configuration file
     (\`/etc/grafana/grafana.ini\`).
 
-    ![1](images\H.png)
+    ![1](images/H.png)
     
-    ![1](images\I.png)
+    ![1](images/I.png)
 
     3\. Restarted Grafana service.
 
@@ -87,14 +87,14 @@ metrics.
 
 Accessed Grafana via \`http://20.80.89.137:3000\`.
 
-![1](images\J.png)
+![1](images/J.png)
 
 2\. Logged in and configured the Azure Monitor data source using Managed
 Identity.
 
-![1](images\K.png)
+![1](images/K.png)
 
-![1](images\L.png)
+![1](images/L.png)
 
 **Step 6: Creating a Dashboard**
 
